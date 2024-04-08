@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Door Opening Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <style>
+        .door {
+            width: 200px;
+            height: 400px;
+            background-color: #9c6;
+            position: relative;
+            perspective: 500px;
+        }
+
+        .door-inner {
+            width: 100%;
+            height: 100%;
+            background-color: #c69;
+            position: absolute;
+            transform-origin: right;
+            animation: openDoor 3s forwards;
+        }
+
+        @keyframes openDoor {
+            from {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(-60deg);
+            }
+        }
+    </style>
+    <div class="door">
+        <div class="door-inner">hiwedwe</div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
