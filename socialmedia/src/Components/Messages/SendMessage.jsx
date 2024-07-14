@@ -71,7 +71,7 @@ const SendMessage = ({ userPhoto, newConsversation }) => {
       return;
     }
 
-    console.log("send " + fileUploaded)
+    // console.log("send " + fileUploaded)
     filesArray.forEach((file) => {
       let reader = new FileReader();
       let fileType = file.type || "notKnown";
@@ -155,10 +155,13 @@ const SendMessage = ({ userPhoto, newConsversation }) => {
                   <div className='flex w-fit overflow-x-scroll h-full example mx-auto space-x-3'>
                     {fileUploaded.map((pic, index) => (
                       (
-                        (pic.type) === "image/jpeg" || pic.type === "image/jpg" || pic.type === "image/webp" || pic.type === "svg+xml"
-                          ? <div key={index} className='w-60 h-40 rounded-lg' style={{ backgroundImage: `url(${pic.base64})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+                        pic.base64.startsWith("data:image/")
+                          ? 
+                            <>
+                            <img key={index} className='w-60 h-40 rounded-lg' src={pic.base64} alt="" />
+                            </>
                           :
-                          <div className='h-40 w-60 py-2 px-2 rounded-md bg-gray-200' style={{ border: "solid black 1px" }}>
+                          <div className='h-40 w-60 py-2 px-2 rounded-md bg-slate-300' style={{ border: "solid black 1px" }}>
                             <div className='flex justify-between px-2 max-w-lg h-full'>
                               <div className='max-w-lg justify-between my-auto h-full mx-auto'>
                                 {
@@ -178,13 +181,12 @@ const SendMessage = ({ userPhoto, newConsversation }) => {
                                                 : null}
                                 <div>
                                   <div className='hover:text-black my-auto h-fit' style={{ textDecorationColor: "none" }}>
-                                    <div className='overflow-hidden max-w-[200px] text-base mt-2 text-left truncate font-bold no-underline' style={{ textDecorationColor: "none" }}>pdf-{pic.name}</div>
+                                    <div className='overflow-hidden max-w-[200px] text-base mt-2 text-left truncate font-bold no-underline' style={{ textDecorationColor: "none" }}>{pic.name}</div>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-
                       )
                     ))}
                   </div>
