@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+.example {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+} 
+
+#root::-webkit-scrollbar {
+  display: none;
+}
+
+#root {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+} 
+
+html {
+     scroll-behavior: smooth;
+   }
+
+.wordSpace {
+    word-spacing: 5px; /* Adjust the value according to your preference */
+  }
+
+.textSelection::selection {
+  background-color: rgb(255, 111, 0);
+  color: black; /* Text color when selected */
+}
+
+.textSelection::-moz-selection {
+  background-color: rgb(255, 183, 0);
+  color: black; /* Text color when selected */
+}
+  
+.active {
+  background-color: rgb(0, 255, 255);
+}
+
+/* Add this to your styles or a CSS file */
+
+.shadow-inner {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes brightnessAnimation {
+  50% {
+    filter: brightness(0.5); /* Change brightness to 50% at 50% of the animation */
+  }
+}
+
+.storyAnimation {
+  animation: brightnessAnimation 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+      transform: scale(1.5);
+  }
+}
+.animatePing {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Hide scrollbar for Chrome, Safari, and Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.grid {
+  background-color: black;
+}
+
+
+@keyframes introAnimation {
+  50% {
+      opacity: .8;
+  }
+}
+.introAnimation {
+  animation: introAnimation 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.inrto {
+  background: -webkit-linear-gradient(top left, #6e8de0, #4b6bc6 50%, #2a3f88);
+  background: -moz-linear-gradient(top left, #6e8de0, #4b6bc6 50%, #2a3f88);
+  background: -ms-linear-gradient(top left, #6e8de0, #4b6bc6 50%, #2a3f88);
+  background: linear-gradient(to bottom right, #6e8de0, #4b6bc6 50%, #2a3f88);
+  background-color: #6e8de0;
+}
